@@ -1,0 +1,86 @@
+/* ==========================================================================
+   ALTA VISUAL COMUNICAÇÃO DIGITAL — DESIGN SYSTEM TOKENS (US1.1)
+   Paleta baseada na identidade oficial: Bordô (#6B1D24 / #582D2E), Preto (#111111) e Branco (#FFFFFF)
+   ========================================================================== */
+
+:root {
+  /* Cores Principais (Compatibilidade total com US1.1 e Seção 3.2 do Backlog) */
+  --color-primary: #6B1D24;          /* Bordô oficial de destaque comercial */
+  --color-primary-bordo: #6B1D24;    /* Alias US1.1 */
+  --color-primary-logo: #582D2E;     /* Tom exato extraído do SVG oficial */
+  --color-primary-light: #8A2831;    /* Bordô vibrante para gradientes e realces */
+  --color-primary-dark: #4A1218;     /* Bordô escuro para estados de hover/active */
+  --color-primary-soft: rgba(107, 29, 36, 0.08);
+  --color-primary-glow: rgba(107, 29, 36, 0.22);
+
+  /* Cores Secundárias & Neutras */
+  --color-dark: #111111;             /* Preto profundo para títulos e contraste forte */
+  --color-dark-black: #111111;       /* Alias US1.1 */
+  --color-charcoal: #1A1A1A;         /* Preto suave para seções escuras e cards técnicos */
+  --color-text-main: #1F1F22;        /* Texto principal de leitura confortável */
+  --color-text-muted: #5A5A60;       /* Subtítulos e textos de apoio */
+  --color-text-light: #8C8C94;       /* Placeholders e legendas */
+
+  /* Fundos & Bordas */
+  --color-light: #FFFFFF;            /* Branco puro para fundo clean */
+  --color-white: #FFFFFF;            /* Alias US1.1 */
+  --color-bg-light: #F7F7F7;         /* Cinza claro US1.1 para divisões e seções secundárias */
+  --color-gray-bg: #F8F9FA;          /* Alias Seção 3.2 */
+  --color-gray-card: #EFEFEF;        /* Superfície neutra de apoio */
+  --color-gray-border: #E0E0E0;      /* Bordas suaves em cards e inputs */
+  --color-border-subtle: #EAEAEA;
+
+  /* Cores Funcionais & WhatsApp */
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #1EBE57;
+  --color-whatsapp-glow: rgba(37, 211, 102, 0.45);
+  --color-success: #15803D;
+  --color-warning: #B45309;
+  --color-danger: #B91C1C;
+
+  /* Tipografia */
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
+
+  /* Tamanhos de Fonte Fluidos */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: clamp(1.75rem, 3vw, 2.35rem);
+  --text-4xl: clamp(2.15rem, 4.2vw, 3.35rem);
+
+  /* Espaçamentos & Layout */
+  --container-max: 1240px;
+  --header-height: 104px;
+  --section-py: clamp(4rem, 7vw, 6.5rem);
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Bordas, Raios & Sombras */
+  --radius-sm: 6px;
+  --radius-card: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 10px 30px rgba(17, 17, 17, 0.07);
+  --shadow-elevated: 0 20px 45px rgba(17, 17, 17, 0.12);
+  --shadow-bordo: 0 10px 28px rgba(107, 29, 36, 0.25);
+
+  /* Transições */
+  --transition-fast: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
