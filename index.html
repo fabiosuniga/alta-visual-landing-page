@@ -68,7 +68,7 @@
 
       <div class="container">
         <div class="hero__grid">
-          <div class="hero__content">
+          <div class="hero__content" data-reveal="left">
             <div class="badge badge--solid">
               <i class="fa-solid fa-bolt" aria-hidden="true"></i>
               <span>Produção Própria em Alta Definição • Bragança Paulista – SP</span>
@@ -105,8 +105,8 @@
 
             <div class="hero__cta-group">
               <a href="#orcamento" class="btn btn--primary">
-                Solicitar Orçamento de Etiquetas
-                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                Orçamento por E-mail
               </a>
               <a href="https://wa.me/551124736001?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20etiquetas%20adesivas."
                 target="_blank" rel="noopener noreferrer" class="btn btn--outline">
@@ -117,7 +117,8 @@
           </div>
 
           <!-- Mostruário Visual Interativo de Rótulos & Etiquetas -->
-          <div class="hero-showcase" aria-label="Mostruário de acabamentos de etiquetas Alta Visual">
+          <div class="hero-showcase" data-reveal="right" data-reveal-delay="150"
+            aria-label="Mostruário de acabamentos de etiquetas Alta Visual">
             <div class="hero-showcase__header">
               <div class="hero-showcase__status">
                 <span class="hero-showcase__dot"></span>
@@ -182,7 +183,7 @@
         <!-- US2.2: Destaque dos Pilares Operacionais (3 Cards) -->
         <div class="pillars" id="diferenciais">
           <div class="pillars__grid">
-            <article class="pillar-card">
+            <article class="pillar-card" data-reveal="up" data-reveal-delay="0">
               <div class="pillar-card__icon" aria-hidden="true">
                 <i class="fa-solid fa-tags fa-lg"></i>
               </div>
@@ -193,7 +194,7 @@
               </p>
             </article>
 
-            <article class="pillar-card">
+            <article class="pillar-card" data-reveal="up" data-reveal-delay="120">
               <div class="pillar-card__icon" aria-hidden="true">
                 <i class="fa-solid fa-award fa-lg"></i>
               </div>
@@ -204,7 +205,7 @@
               </p>
             </article>
 
-            <article class="pillar-card">
+            <article class="pillar-card" data-reveal="up" data-reveal-delay="240">
               <div class="pillar-card__icon" aria-hidden="true">
                 <i class="fa-solid fa-gauge-high fa-lg"></i>
               </div>
@@ -222,7 +223,7 @@
     <!-- ÉPICO 3: Showcase de Etiquetas Adesivas & Acabamentos Especiais (Seção Principal) -->
     <section class="section section--gray" id="etiquetas">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-reveal="up">
           <div class="badge">
             <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
             <span>Especialidade Principal Alta Visual</span>
@@ -237,7 +238,8 @@
         </div>
 
         <!-- US3.1: Filtros de Variações de Acabamento -->
-        <div class="filter-tabs" role="tablist" aria-label="Filtrar acabamentos de etiquetas">
+        <div class="filter-tabs" role="tablist" aria-label="Filtrar acabamentos de etiquetas" data-reveal="up"
+          data-reveal-delay="80">
           <button type="button" class="filter-tab is-active" data-label-filter="todos" role="tab" aria-selected="true">
             Todos os Acabamentos
           </button>
@@ -255,7 +257,7 @@
         <!-- US3.1: Grid de Variações de Acabamento -->
         <div class="labels-grid">
           <!-- Card 1: Vinil Brilho -->
-          <article class="label-card" data-label-category="brilho">
+          <article class="label-card" data-label-category="brilho" data-reveal="up" data-reveal-delay="0">
             <div class="label-card__preview label-card__preview--brilho">
               <span class="label-card__tag">Campeão de Vendas</span>
               <div class="product-bottle product-bottle--brilho">
@@ -280,6 +282,7 @@
               <div class="label-card__action">
                 <button type="button" class="btn btn--primary btn--sm btn--full"
                   data-select-product="Etiquetas em Vinil Brilho">
+                  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                   Orçar Etiqueta Vinil Brilho
                 </button>
               </div>
@@ -287,7 +290,7 @@
           </article>
 
           <!-- Card 2: Vinil Fosco -->
-          <article class="label-card" data-label-category="fosco">
+          <article class="label-card" data-label-category="fosco" data-reveal="up" data-reveal-delay="120">
             <div class="label-card__preview label-card__preview--fosco">
               <span class="label-card__tag">Toque Sofisticado</span>
               <div class="product-bottle product-bottle--fosco">
@@ -313,6 +316,7 @@
               <div class="label-card__action">
                 <button type="button" class="btn btn--dark btn--sm btn--full"
                   data-select-product="Etiquetas em Vinil Fosco">
+                  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                   Orçar Etiqueta Vinil Fosco
                 </button>
               </div>
@@ -320,7 +324,7 @@
           </article>
 
           <!-- Card 3: Etiquetas Transparentes -->
-          <article class="label-card" data-label-category="transparente">
+          <article class="label-card" data-label-category="transparente" data-reveal="up" data-reveal-delay="240">
             <div class="label-card__preview label-card__preview--transparente">
               <span class="label-card__tag">No-Label Look</span>
               <div class="product-bottle product-bottle--transparente">
@@ -344,6 +348,7 @@
               <div class="label-card__action">
                 <button type="button" class="btn btn--primary btn--sm btn--full"
                   data-select-product="Etiquetas Transparentes">
+                  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                   Orçar Etiqueta Transparente
                 </button>
               </div>
@@ -354,7 +359,7 @@
         <!-- Módulos Técnicos — UV & Etiquetas de Troca de Óleo -->
         <div class="tech-modules">
           <!-- Módulo Técnico — Etiquetas e Stickers UV -->
-          <article class="tech-card tech-card--uv">
+          <article class="tech-card tech-card--uv" data-reveal="left" data-reveal-delay="0">
             <div>
               <div class="tech-card__header">
                 <span class="badge badge--dark">Módulo Técnico</span>
@@ -380,13 +385,14 @@
             </div>
             <div>
               <button type="button" class="btn btn--primary" data-select-product="Etiquetas e Stickers UV">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                 Solicitar Orçamento de Stickers UV
               </button>
             </div>
           </article>
 
           <!-- Módulo Técnico — Etiquetas de Troca de Óleo (Oficinas Mecânicas & Auto Centers) -->
-          <article class="tech-card tech-card--oil">
+          <article class="tech-card tech-card--oil" data-reveal="right" data-reveal-delay="120">
             <div>
               <div class="tech-card__header">
                 <span class="badge">Especial Automotivo</span>
@@ -414,6 +420,7 @@
             </div>
             <div>
               <button type="button" class="btn btn--dark" data-select-product="Etiquetas de Troca de Óleo">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                 Orçar Etiquetas de Troca de Óleo
               </button>
             </div>
@@ -421,7 +428,7 @@
         </div>
 
         <!-- Calculadora / Seletor Interativo de Formatos e Acabamentos (JS) -->
-        <div class="calculator-box" id="calculadora-etiquetas">
+        <div class="calculator-box" id="calculadora-etiquetas" data-reveal="scale">
           <div class="calculator-box__top">
             <div>
               <span class="badge badge--dark" style="margin-bottom: 0.4rem;">
@@ -541,7 +548,7 @@
     <!-- Soluções Secundárias — Placas, Banners & Comunicação Visual -->
     <section class="section" id="banners-placas">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-reveal="up">
           <div class="badge">
             <i class="fa-solid fa-signs-post" aria-hidden="true"></i>
             <span>Soluções Completas para Empresas</span>
@@ -557,7 +564,7 @@
 
         <div class="solutions-grid">
           <!-- Solução 1: Banners e Lonas -->
-          <article class="solution-card">
+          <article class="solution-card" data-reveal="up" data-reveal-delay="0">
             <div class="solution-card__icon" aria-hidden="true">
               <i class="fa-solid fa-flag fa-lg"></i>
             </div>
@@ -566,14 +573,15 @@
               Impressão digital de grande formato em lona frontlight e backlight com acabamento em bastão, ponteira ou
               ilhós para eventos, vitrines, feiras e campanhas promocionais.
             </p>
-            <a href="#orcamento" class="solution-card__link" data-select-product="Banners e Lonas Promocionais"
-              data-select-shape="Sob Medida">
-              Solicitar Orçamento <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            <a href="https://wa.me/551124736001" class="solution-card__link"
+              data-select-product="Banners e Lonas Promocionais" data-select-shape="Sob Medida">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Orçar pelo WhatsApp <i
+                class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
           </article>
 
           <!-- Solução 2: Sinalização de Segurança & Placas -->
-          <article class="solution-card">
+          <article class="solution-card" data-reveal="up" data-reveal-delay="120">
             <div class="solution-card__icon" aria-hidden="true">
               <i class="fa-solid fa-triangle-exclamation fa-lg"></i>
             </div>
@@ -582,14 +590,15 @@
               Placas de aviso, EPI, rota de fuga fotoluminescente, identificação de setores industriais e condomínios em
               PS, PVC expandido ou acrílico conforme normas vigentes.
             </p>
-            <a href="#orcamento" class="solution-card__link" data-select-product="Sinalização de Segurança e Placas"
-              data-select-shape="Sob Medida">
-              Solicitar Orçamento <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            <a href="https://wa.me/551124736001" class="solution-card__link"
+              data-select-product="Sinalização de Segurança e Placas" data-select-shape="Sob Medida">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Orçar pelo WhatsApp <i
+                class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
           </article>
 
           <!-- Solução 3: Envelopamento de Veículos -->
-          <article class="solution-card">
+          <article class="solution-card" data-reveal="up" data-reveal-delay="240">
             <div class="solution-card__icon" aria-hidden="true">
               <i class="fa-solid fa-truck-fast fa-lg"></i>
             </div>
@@ -598,9 +607,10 @@
               Transforme sua frota em propaganda móvel 24 horas por dia com vinil automotivo de alta performance e
               laminação protetora UV.
             </p>
-            <a href="#orcamento" class="solution-card__link" data-select-product="Envelopamento de Veículos e Frotas"
-              data-select-shape="Sob Medida">
-              Solicitar Orçamento <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            <a href="https://wa.me/551124736001" class="solution-card__link"
+              data-select-product="Envelopamento de Veículos e Frotas" data-select-shape="Sob Medida">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Orçar pelo WhatsApp <i
+                class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
           </article>
         </div>
@@ -611,7 +621,7 @@
     <section class="section section--gray" id="sobre-galeria">
       <div class="container">
         <!-- US5.1: Bloco Institucional "Sobre a Alta Visual" & Slogan -->
-        <div class="about-banner">
+        <div class="about-banner" data-reveal="scale">
           <img src="assets/img/logo-silhueta-aguia.svg" alt="" class="about-banner__eagle" aria-hidden="true" />
 
           <div>
@@ -633,19 +643,19 @@
           </div>
 
           <div class="about-stats">
-            <div class="about-stat-box">
+            <div class="about-stat-box" data-reveal="up" data-reveal-delay="80">
               <strong>Alta Precisão</strong>
               <span>Recorte eletrônico milimétrico para stickers e rótulos</span>
             </div>
-            <div class="about-stat-box">
+            <div class="about-stat-box" data-reveal="up" data-reveal-delay="160">
               <strong>Bragança Pta.</strong>
               <span>Atendimento ágil local e retirada na loja física</span>
             </div>
-            <div class="about-stat-box">
+            <div class="about-stat-box" data-reveal="up" data-reveal-delay="240">
               <strong>5+ Acabamentos</strong>
               <span>Brilho, Fosco, Transparente, UV e Troca de Óleo</span>
             </div>
-            <div class="about-stat-box">
+            <div class="about-stat-box" data-reveal="up" data-reveal-delay="320">
               <strong>100% Sob Medida</strong>
               <span>Pequenas, médias e grandes tiragens empresariais</span>
             </div>
@@ -653,7 +663,7 @@
         </div>
 
         <!-- US5.2: Galeria de Projetos & Clientes -->
-        <div class="section-header">
+        <div class="section-header" data-reveal="up">
           <div class="badge">
             <i class="fa-solid fa-images" aria-hidden="true"></i>
             <span>Portfólio &amp; Aplicações Reais</span>
@@ -665,7 +675,8 @@
           </p>
         </div>
 
-        <div class="filter-tabs" role="tablist" aria-label="Filtrar galeria de projetos">
+        <div class="filter-tabs" role="tablist" aria-label="Filtrar galeria de projetos" data-reveal="up"
+          data-reveal-delay="80">
           <button type="button" class="filter-tab is-active" data-gallery-filter="todos">Todos os Projetos</button>
           <button type="button" class="filter-tab" data-gallery-filter="etiquetas">Etiquetas &amp; Rótulos</button>
           <button type="button" class="filter-tab" data-gallery-filter="banners">Banners &amp; Lonas</button>
@@ -673,12 +684,12 @@
         </div>
 
         <div class="gallery-grid">
-          <article class="gallery-item" data-gallery-category="etiquetas">
+          <article class="gallery-item" data-gallery-category="etiquetas" data-reveal="up" data-reveal-delay="0">
             <div class="gallery-item__art gallery-item__art--1">
               <span class="sticker-mockup sticker-mockup--brilho">
                 <i class="fa-solid fa-mug-hot" aria-hidden="true"></i> RÓTULOS GOURMET &amp; CAFÉS
               </span>
-              <p style="font-size: 0.78rem; margin-top: 0.75rem; opacity: 0.85;">Recorte Especial em Bobina</p>
+              <p style="font-size: 0.78rem; margin-top: 0.75rem; opacity: 0.85;">Recorte Especial Personalizado</p>
             </div>
             <div class="gallery-item__caption">
               <span class="gallery-item__category">Etiquetas Vinil Fosco &amp; Brilho</span>
@@ -688,7 +699,7 @@
             </div>
           </article>
 
-          <article class="gallery-item" data-gallery-category="etiquetas">
+          <article class="gallery-item" data-gallery-category="etiquetas" data-reveal="up" data-reveal-delay="100">
             <div class="gallery-item__art gallery-item__art--2">
               <span class="sticker-mockup sticker-mockup--transparente">
                 <i class="fa-solid fa-oil-can" aria-hidden="true"></i> TROCA DE ÓLEO • OFICINAS
@@ -703,7 +714,7 @@
             </div>
           </article>
 
-          <article class="gallery-item" data-gallery-category="etiquetas">
+          <article class="gallery-item" data-gallery-category="etiquetas" data-reveal="up" data-reveal-delay="200">
             <div class="gallery-item__art gallery-item__art--3">
               <span class="sticker-mockup sticker-mockup--uv">
                 <i class="fa-solid fa-sun" aria-hidden="true"></i> STICKERS UV INDUSTRIAL
@@ -718,7 +729,7 @@
             </div>
           </article>
 
-          <article class="gallery-item" data-gallery-category="banners">
+          <article class="gallery-item" data-gallery-category="banners" data-reveal="up" data-reveal-delay="0">
             <div class="gallery-item__art gallery-item__art--4">
               <span class="sticker-mockup sticker-mockup--brilho">
                 <i class="fa-solid fa-flag" aria-hidden="true"></i> BANNERS &amp; LONAS
@@ -733,7 +744,7 @@
             </div>
           </article>
 
-          <article class="gallery-item" data-gallery-category="sinalizacao">
+          <article class="gallery-item" data-gallery-category="sinalizacao" data-reveal="up" data-reveal-delay="100">
             <div class="gallery-item__art gallery-item__art--5">
               <span class="sticker-mockup sticker-mockup--fosco">
                 <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> PLACAS &amp; SEGURANÇA
@@ -748,7 +759,7 @@
             </div>
           </article>
 
-          <article class="gallery-item" data-gallery-category="sinalizacao">
+          <article class="gallery-item" data-gallery-category="sinalizacao" data-reveal="up" data-reveal-delay="200">
             <div class="gallery-item__art gallery-item__art--6">
               <span class="sticker-mockup sticker-mockup--uv">
                 <i class="fa-solid fa-van-shuttle" aria-hidden="true"></i> PERSONALIZAÇÃO DE FROTA
@@ -766,10 +777,10 @@
       </div>
     </section>
 
-    <!-- ÉPICO 6 (US6.1): Formulário Inteligente de Orçamento & Atendimento Direto -->
+    <!-- ÉPICO 6 (US6.1): Formulário de Orçamento por E-mail & Atendimento Direto via WhatsApp -->
     <section class="section" id="orcamento">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-reveal="up">
           <div class="badge badge--solid">
             <i class="fa-solid fa-file-invoice" aria-hidden="true"></i>
             <span>Orçamento Rápido &amp; Sem Compromisso</span>
@@ -778,17 +789,21 @@
             Solicite seu <span class="text-bordo">Orçamento Agora</span>
           </h2>
           <p class="section-subtitle">
-            Preencha os dados abaixo e receba atendimento direto da nossa equipe pelo WhatsApp ou e-mail com rapidez.
+            Prefere atendimento imediato pelo WhatsApp ou receber uma proposta formal por e-mail? Escolha o canal ideal
+            para a sua empresa.
           </p>
         </div>
 
         <div class="quote-layout">
-          <!-- Coluna Lateral de Contato Direto -->
-          <aside class="quote-info">
+          <!-- Coluna Lateral de Contato Direto (WhatsApp) -->
+          <aside class="quote-info" data-reveal="left">
+            <span class="badge badge--dark" style="margin-bottom: 0.85rem;">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Canal Direto • WhatsApp
+            </span>
             <h3>Atendimento Direto Alta Visual</h3>
             <p>
-              Tem a arte pronta ou precisa de ajuda para definir o melhor material para sua etiqueta, banner ou placa?
-              Fale diretamente conosco!
+              Tem a arte pronta ou precisa de ajuda rápida para definir o melhor material para sua etiqueta, banner ou
+              placa? Fale diretamente conosco pelo WhatsApp!
             </p>
 
             <div class="contact-list">
@@ -833,9 +848,18 @@
             </a>
           </aside>
 
-          <!-- US6.1: Formulário Inteligente de Orçamento -->
-          <div class="quote-form-card">
-            <form id="quote-form">
+          <!-- US6.1: Formulário Principal Exclusivo para Orçamento via E-mail (Webform) -->
+          <div class="quote-form-card" data-reveal="right" data-reveal-delay="120">
+            <div class="quote-form-card__header">
+              <span class="badge" style="margin-bottom: 0.6rem;">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <span>Canal E-mail • Proposta Comercial</span>
+              </span>
+              <h3>Orçamento por E-mail</h3>
+              <p>Preencha os dados do seu pedido abaixo para receber o orçamento detalhado diretamente no seu e-mail.</p>
+            </div>
+
+            <form id="quote-form" data-webform-endpoint="">
               <div class="form-grid">
                 <div class="form-group">
                   <label for="quote-name" class="form-label">Nome ou Empresa *</label>
@@ -844,15 +868,15 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="quote-phone" class="form-label">Telefone / WhatsApp *</label>
+                  <label for="quote-phone" class="form-label">Telefone / Contato *</label>
                   <input type="tel" id="quote-phone" name="phone" class="form-control" placeholder="(11) 99999-9999"
                     required autocomplete="tel" />
                 </div>
 
                 <div class="form-group form-group--full">
-                  <label for="quote-email" class="form-label">E-mail (Opcional)</label>
+                  <label for="quote-email" class="form-label">E-mail para Receber o Orçamento *</label>
                   <input type="email" id="quote-email" name="email" class="form-control"
-                    placeholder="seuemail@empresa.com.br" autocomplete="email" />
+                    placeholder="seuemail@empresa.com.br" required autocomplete="email" />
                 </div>
 
                 <div class="form-group">
@@ -880,7 +904,6 @@
                     <option value="Redondo">Redondo</option>
                     <option value="Quadrado / Retangular">Quadrado / Retangular</option>
                     <option value="Corte Especial (Faca)">Corte Especial (Faca Personalizada)</option>
-                    <option value="Rolo Contínuo (Bobina)">Rolo Contínuo (Bobina)</option>
                     <option value="Sob Medida">Outro / Sob Medida</option>
                   </select>
                 </div>
@@ -904,9 +927,9 @@
                 </div>
 
                 <div class="form-group form-group--full" style="margin-top: 0.5rem;">
-                  <button type="submit" class="btn btn--primary btn--full">
-                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                    Enviar Pedido de Orçamento via WhatsApp
+                  <button type="submit" id="quote-submit-btn" class="btn btn--primary btn--full">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    Enviar Pedido de Orçamento por E-mail
                   </button>
                 </div>
               </div>
@@ -923,7 +946,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
-        <div>
+        <div data-reveal="up" data-reveal-delay="0">
           <a href="#home" class="footer__logo" aria-label="Alta Visual Comunicação Digital">
             <img src="assets/img/logo-normal-branco.svg" alt="Alta Visual Comunicação Digital" />
           </a>
@@ -936,7 +959,7 @@
           </p>
         </div>
 
-        <div>
+        <div data-reveal="up" data-reveal-delay="120">
           <h4 class="footer__title">Navegação Rápida</h4>
           <ul class="footer__links">
             <li><a href="#home">Início</a></li>
@@ -948,7 +971,7 @@
           </ul>
         </div>
 
-        <div>
+        <div data-reveal="up" data-reveal-delay="240">
           <h4 class="footer__title">Contato &amp; Localização</h4>
           <ul class="footer__links">
             <li>
