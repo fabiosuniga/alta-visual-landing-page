@@ -115,18 +115,6 @@
       });
     }
 
-    // Transfere configuração para o formulário de orçamento (US3.4 -> US6.1)
-    if (applyToFormBtn) {
-      applyToFormBtn.addEventListener('click', () => {
-        prefillQuoteForm({
-          product: state.finish,
-          shape: state.shape,
-          dimensions: state.size,
-          quantity: state.quantity
-        });
-      });
-    }
-
     // Envia configuração direto para o WhatsApp da Alta Visual
     if (sendDirectWhatsappBtn) {
       sendDirectWhatsappBtn.addEventListener('click', () => {
@@ -141,82 +129,19 @@
       });
     }
 
-    // Botões de cards de produtos/acabamentos que pré-selecionam o formulário
+    // Botões de cards de produtos/acabamentos que abrem o WhatsApp diretamente
     const productTriggers = document.querySelectorAll('[data-select-product]');
     productTriggers.forEach((trigger) => {
       trigger.addEventListener('click', (e) => {
         e.preventDefault();
         const productValue = trigger.getAttribute('data-select-product');
-        const defaultShape = trigger.getAttribute('data-select-shape') || state.shape;
-
-        // Também sincroniza o estado da calculadora se for uma etiqueta
-        if (FINISH_DETAILS[productValue]) {
-          state.finish = productValue;
-          finishBtns.forEach((b) => {
-            b.classList.toggle('is-selected', b.getAttribute('data-calc-finish') === productValue);
-          });
-          updateCalculatorUI();
-        }
-
-        prefillQuoteForm({
-          product: productValue,
-          shape: defaultShape,
-          dimensions: state.size,
-          quantity: state.quantity
-        });
+        const message = `Olá, equipe *Alta Visual*! Gostaria de solicitar um orçamento para *${productValue}*.`;
+        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank', 'noopener,noreferrer');
       });
     });
 
     updateCalculatorUI();
-  }
-
-  function prefillQuoteForm({ product, shape, dimensions, quantity }) {
-    const formSection = document.getElementById('orcamento');
-    const formCard = document.querySelector('.quote-form-card');
-    const productSelect = document.getElementById('quote-product');
-    const shapeSelect = document.getElementById('quote-shape');
-    const dimensionsInput = document.getElementById('quote-dimensions');
-    const quantityInput = document.getElementById('quote-quantity');
-    const nameInput = document.getElementById('quote-name');
-
-    if (productSelect && product) {
-      const optionExists = Array.from(productSelect.options).some((opt) => opt.value === product);
-      if (optionExists) {
-        productSelect.value = product;
-      }
-    }
-
-    if (shapeSelect && shape) {
-      const shapeExists = Array.from(shapeSelect.options).some((opt) => opt.value === shape);
-      if (shapeExists) {
-        shapeSelect.value = shape;
-      }
-    }
-
-    if (dimensionsInput && dimensions) {
-      dimensionsInput.value = dimensions;
-    }
-
-    if (quantityInput && quantity) {
-      quantityInput.value = quantity;
-    }
-
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    if (formCard) {
-      formCard.classList.add('is-highlighted');
-      setTimeout(() => {
-        formCard.classList.remove('is-highlighted');
-      }, 2200);
-    }
-
-    if (nameInput) {
-      setTimeout(() => {
-        nameInput.focus({ preventScroll: true });
-      }, 650);
-    }
   }
 
   document.addEventListener('DOMContentLoaded', initLabelCalculator);

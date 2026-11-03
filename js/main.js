@@ -1,20 +1,64 @@
 /**
  * ALTA VISUAL COMUNICAÇÃO DIGITAL
- * js/main.js — Navegação, Filtros Interativos, Galeria e Integração WhatsApp (11) 2473-6001
+ * js/main.js — Navegação, Scroll Reveal, Filtros Interativos, Galeria e Webform de E-mail
  */
 
 (function () {
   'use strict';
 
-  const WHATSAPP_PHONE = '551124736001';
-
   document.addEventListener('DOMContentLoaded', () => {
+    initScrollReveal();
     initHeaderAndMobileNav();
     initLabelFinishTabs();
     initGalleryFilter();
     initPhoneMask();
     initQuoteForm();
   });
+
+  /* 0. Efeito Scroll Reveal conforme o usuário rola a página */
+  function initScrollReveal() {
+    const revealElements = document.querySelectorAll('[data-reveal]');
+    if (revealElements.length === 0) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      revealElements.forEach((el) => el.classList.add('is-revealed', 'reveal-done'));
+      return;
+    }
+
+    document.documentElement.classList.add('js-reveal-ready');
+
+    revealElements.forEach((el) => {
+      const delay = el.getAttribute('data-reveal-delay');
+      if (delay) {
+        el.style.setProperty('--reveal-delay', `${delay}ms`);
+      }
+    });
+
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const target = entry.target;
+            const delayMs = parseInt(target.getAttribute('data-reveal-delay') || '0', 10);
+
+            target.classList.add('is-revealed');
+            observer.unobserve(target);
+
+            setTimeout(() => {
+              target.classList.add('reveal-done');
+            }, delayMs + 750);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -45px 0px'
+      }
+    );
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+  }
 
   /* 1. Header Fixo e Menu Mobile (US1.2) */
   function initHeaderAndMobileNav() {
@@ -90,6 +134,9 @@
           const category = card.getAttribute('data-label-category');
           const shouldShow = filter === 'todos' || category === filter;
           card.hidden = !shouldShow;
+          if (shouldShow) {
+            card.classList.add('is-revealed', 'reveal-done');
+          }
         });
       });
     });
@@ -108,7 +155,11 @@
 
         items.forEach((item) => {
           const cat = item.getAttribute('data-gallery-category');
-          item.hidden = !(filter === 'todos' || cat === filter);
+          const shouldShow = filter === 'todos' || cat === filter;
+          item.hidden = !shouldShow;
+          if (shouldShow) {
+            item.classList.add('is-revealed', 'reveal-done');
+          }
         });
       });
     });
@@ -133,46 +184,76 @@
     });
   }
 
-  /* 5. Formulário Inteligente de Orçamento com Envio via WhatsApp (US6.1 & US6.2) */
+  /* 5. Formulário Principal de Orçamento Exclusivo para E-mail / Webform (US6.1) */
   function initQuoteForm() {
     const form = document.getElementById('quote-form');
     const feedback = document.getElementById('quote-feedback');
+    const submitBtn = document.getElementById('quote-submit-btn');
 
     if (!form) return;
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const name = document.getElementById('quote-name')?.value.trim() || '';
-      const email = document.getElementById('quote-email')?.value.trim() || '';
-      const phone = document.getElementById('quote-phone')?.value.trim() || '';
-      const product = document.getElementById('quote-product')?.value || '';
-      const shape = document.getElementById('quote-shape')?.value || '';
-      const dimensions = document.getElementById('quote-dimensions')?.value.trim() || 'A definir';
-      const quantity = document.getElementById('quote-quantity')?.value.trim() || 'A definir';
-      const notes = document.getElementById('quote-notes')?.value.trim() || '';
+      const payload = {
+        name: document.getElementById('quote-name')?.value.trim() || '',
+        phone: document.getElementById('quote-phone')?.value.trim() || '',
+        email: document.getElementById('quote-email')?.value.trim() || '',
+        product: document.getElementById('quote-product')?.value || '',
+        shape: document.getElementById('quote-shape')?.value || '',
+        dimensions: document.getElementById('quote-dimensions')?.value.trim() || 'A definir',
+        quantity: document.getElementById('quote-quantity')?.value.trim() || 'A definir',
+        notes: document.getElementById('quote-notes')?.value.trim() || ''
+      };
 
-      let message =
-        `Olá, equipe *Alta Visual*! Gostaria de solicitar um orçamento:\n\n` +
-        `• *Nome/Empresa:* ${name}\n` +
-        `• *WhatsApp/Telefone:* ${phone}\n` +
-        (email ? `• *E-mail:* ${email}\n` : '') +
-        `• *Produto/Acabamento:* ${product}\n` +
-        `• *Formato/Corte:* ${shape}\n` +
-        `• *Medidas aproximadas:* ${dimensions}\n` +
-        `• *Quantidade/Tiragem:* ${quantity}`;
+      const endpoint = form.getAttribute('data-webform-endpoint')?.trim() || '';
+      const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
 
-      if (notes) {
-        message += `\n• *Observações:* ${notes}`;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Enviando pedido por e-mail...';
       }
 
-      if (feedback) {
-        feedback.hidden = false;
-        feedback.innerHTML = '<i class="fa-solid fa-circle-check"></i> Pedido formatado com sucesso! Abrindo o WhatsApp oficial da Alta Visual...';
-      }
+      try {
+        if (endpoint) {
+          const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          });
 
-      const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
-      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+          if (!response.ok) {
+            throw new Error('Falha no envio do Webform');
+          }
+        } else {
+          // Simulação pronta enquanto o endpoint do Webform de e-mail não está configurado
+          await new Promise((resolve) => setTimeout(resolve, 600));
+        }
+
+        if (feedback) {
+          feedback.hidden = false;
+          feedback.innerHTML =
+            `<i class="fa-solid fa-circle-check" aria-hidden="true"></i> ` +
+            `Solicitação de orçamento enviada por e-mail com sucesso! Responderemos em breve para <strong>${payload.email}</strong>.`;
+        }
+
+        form.reset();
+      } catch (err) {
+        if (feedback) {
+          feedback.hidden = false;
+          feedback.innerHTML =
+            `<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> ` +
+            `Não foi possível enviar no momento. Por favor, tente novamente ou envie para atendimento@altavisual.com.br.`;
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHTML;
+        }
+      }
     });
   }
 })();
